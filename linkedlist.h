@@ -226,7 +226,17 @@ public:
 
 }; // of class LinkedList
 
-
+template <typename T>
+std::ostream& operator<< (std:: ostream&out, const LinkedList<T>& alist){
+  LLNode<T>* tmp = alist.m_head;
+  out<< "[";
+  for( int i = 0; i<alist.m_size; i++){
+    out<<tmp->m_data<<" , ";
+    tmp= tmp->m_next; 
+  }
+  out<< "]";
+  return out;
+}
 
 #include "linkedlist.hpp"
 #endif
